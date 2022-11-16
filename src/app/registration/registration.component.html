@@ -1,0 +1,13 @@
+<h3>Available Flights for Bookings</h3>
+
+<div *ngFor="let t of flights">
+    <p>{{t.FlightNo}} -------- {{t.name}} ------ {{t.source}} =======> {{t.Destination}}--- Rs:{{t.price}} ::::::::
+        Departure:{{t.Departure}} <button (click)="book(t)" *ngIf="!t.isbooked, else elseblock">Book</button>
+        <ng-template #elseblock><button style="background-color: red;" (click)="cancelbook(t)">Cancel</button>
+        </ng-template>
+    </p>
+</div>
+
+<h2> Source - {{source}} ---------> Destination -{{destination}}</h2>
+<h3>Total Amount Payable is : Rs {{fare}}</h3>
+
